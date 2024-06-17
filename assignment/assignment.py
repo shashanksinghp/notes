@@ -5,6 +5,7 @@ def fibonacci(num):
         yield a
         a, b = b, a + b
 
+
 for fib in fibonacci(10):
     print(fib)
 
@@ -26,10 +27,16 @@ def prime(num):
 for i in prime(50):
     print(i)
 
-#flatten a nested dictionary into a single dictionary.
-nested_dict = {"one":{"a":5,"b":{"c":6,"d":{"e":7}}},"two":7,"three":{"a":5,"b":6,"c":7}}
+# flatten a nested dictionary into a single dictionary.
+nested_dict = {
+    "one": {"a": 5, "b": {"c": 6, "d": {"e": 7}}},
+    "two": 7,
+    "three": {"a": 5, "b": 6, "c": 7},
+}
 flatten_dict = {}
 nested_key = []
+
+
 def nested_dictonary(nested):
     for k, v in nested.items():
         if isinstance(v, dict):
@@ -44,4 +51,6 @@ def nested_dictonary(nested):
                 flatten_dict[k] = v
     nested_key.clear()
     return flatten_dict
+
+
 print(nested_dictonary(nested_dict))
