@@ -42,7 +42,6 @@ htmlcov/
 .nox/
 .coverage
 .coverage.*
-.venv
 .cache
 nosetests.xml
 coverage.xml
