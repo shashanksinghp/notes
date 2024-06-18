@@ -33,16 +33,14 @@ x: tuple[int, str, float] = (3, "yes", 7.5)  # Python 3.9+
 # For tuples of variable size, we use one type and ellipsis
 x: tuple[int, ...] = (1, 2, 3)  # Python 3.9+
 
-from typing import Union, Optional
+from typing import Optional
 
 # On Python 3.10+, use the | operator when something could be one of a few types
 x: list[int | str] = [3, 5, "test", "fun"]  # Python 3.10+
-# On earlier versions, use Union
-x: list[Union[int, str]] = [3, 5, "test", "fun"]
 
 # Use Optional[X] for a value that could be None
 # Optional[X] is the same as X | None or Union[X, None]
-x: Optional[str] = "something" if some_condition() else None
+x: Optional[str] = "something"
 if x is not None:
     # Mypy understands x won't be None here because of the if-statement
     print(x.upper())
